@@ -1,0 +1,28 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-05 17:34:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-05 17:35:23
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Fun #261: Whose Move</title>
+</head>
+
+<body>
+    <script>
+        function whoseMove(lastPlayer, win) {
+            if (lastPlayer === "black" && win === false) return "white"
+            if (lastPlayer === "white" && win === true) return "white"
+            return "black"
+        }
+    </script>
+</body>
+
+</html>
