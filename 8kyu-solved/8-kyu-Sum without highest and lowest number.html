@@ -1,0 +1,45 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-05 17:27:31
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-05 17:33:19
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum without highest and lowest number</title>
+</head>
+
+<body>
+    <script>
+        /*
+        function sumArray(array) {
+            let sum = 0;
+            if (!Array.isArray(array)) return 0
+            if (array) {
+                for (let i = 0; i < array.length; i++) {
+                    sum += array[i];
+                }
+                return sum - Math.max(...array) - Math.min(...array);
+            }
+        }
+        */
+
+        function sumArray(array) {
+            if (!Array.isArray(array)) return 0
+            return array
+                .sort((a, b) => a - b)
+                .slice(1, array.length - 1)
+                .reduce((a, b) => a + b, 0)
+        }
+
+        console.log(sumArray([6, 2, 1, 8, 10]));
+    </script>
+</body>
+
+</html>

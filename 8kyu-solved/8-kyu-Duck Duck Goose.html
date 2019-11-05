@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-05 17:21:41
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-05 17:23:50
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duck Duck Goose</title>
+</head>
+
+<body>
+    <script>
+        function duckDuckGoose(players, goose) {
+            // ...
+            return players[(goose - 1) % players.length].name
+        }
+
+        let ex_names = ["a", "b", "c", "d", "c", "e", "f", "g", "h", "z"];
+        let players = ex_names.map((n) => new Player(n));
+
+        console.log(duckDuckGoose(players, 1));
+        console.log(duckDuckGoose(players, 20));
+        console.log(duckDuckGoose(players, 13));
+        console.log(duckDuckGoose(players, 5));
+    </script>
+</body>
+
+</html>
