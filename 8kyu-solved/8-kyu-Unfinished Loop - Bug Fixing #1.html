@@ -1,9 +1,9 @@
 <!--
  * @fileheader.Author: Mr.J
  * @fileheader.LastModifiedBy: Mr.J
- * @Date: 2019-11-05 17:38:50
+ * @Date: 2019-11-05 22:26:38
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-11-05 17:39:51
+ * @LastEditTime: 2019-11-05 22:27:01
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +12,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Push a hash/an object into array</title>
+    <title>Unfinished Loop - Bug Fixing #1</title>
 </head>
 
 <body>
     <script>
-        items = []
-        items.push({
-            a: "b",
-            c: "d"
-        })
+        function createArray(number) {
+            var newArray = [];
+
+            for (var counter = 1; counter <= number; counter++) {
+                newArray.push(counter);
+            }
+
+            return newArray;
+        }
     </script>
 </body>
 
