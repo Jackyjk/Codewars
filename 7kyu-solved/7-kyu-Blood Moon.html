@@ -1,0 +1,43 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 11:11:49
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 11:46:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood Moon</title>
+</head>
+
+<body>
+    <script>
+        function bloodMoon(r) {
+            // your code here
+            //最终所求的圆的半径
+            let new_r = r / 2;
+            //AFDEA     半径
+            let afdea_r = (Math.sqrt(Math.pow(r, 2) * 2)) / 2;
+            // 1/4 AFDEA 的 面积
+            let s = Math.PI * Math.pow(afdea_r, 2) / 4;
+            //三角形 AEF
+            let san_s = afdea_r * afdea_r / 2;
+            //AHFA
+            let part_final_s = s - san_s;
+            //AGFA ⚪ 
+            let final_s = (Math.PI * Math.pow(new_r , 2)) / 2;
+            return (final_s - part_final_s).toFixed(2);
+        }
+
+        console.log(bloodMoon(1));
+        console.log(bloodMoon(2));
+        console.log(bloodMoon(3));
+    </script>
+</body>
+
+</html>

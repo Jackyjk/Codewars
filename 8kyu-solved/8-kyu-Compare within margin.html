@@ -1,0 +1,29 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-06 21:06:23
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-06 21:07:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compare within margin</title>
+</head>
+
+<body>
+    <script>
+        function closeCompare(a, b, margin = 0) {
+            if (Math.abs(a - b) <= margin) return 0
+            if (a < b) return -1
+            return 1
+        }
+
+    </script>
+</body>
+
+</html>
