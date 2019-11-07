@@ -1,0 +1,38 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 15:26:24
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 15:55:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lario and Muigi Pipe Problem</title>
+</head>
+
+<body>
+    <script>
+
+        function pipeFix(numbers) {
+            let max = Math.max(...numbers);
+            let min = Math.min(...numbers);
+            let arr = [];
+
+            for(let i=min;i<=max;i++){
+                arr.push(i);
+            }
+            return arr;
+        }
+
+        console.log(pipeFix([1, 2, 3, 12]));
+        console.log(pipeFix([-1,4]));
+        console.log(pipeFix([1,2,3,4,5]));
+    </script>
+</body>
+
+</html>

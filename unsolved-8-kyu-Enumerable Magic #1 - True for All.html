@@ -1,0 +1,38 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 15:31:06
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 15:38:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enumerable Magic #1 - True for All?</title>
+</head>
+
+<body>
+    <script>
+        function all(arr, fun) {
+            // ...
+            let max = Math.max(...arr);
+            if (max >= 10) {
+                return false;
+            } else {
+                let num = arr.some(fun);
+                return num;
+            }
+        }
+
+        console.log((all([1, 2, 3, 4, 5], function (v) { return v < 9 })));
+        console.log(all([1, 2, 3, 4, 5], function (v) { return v > 9 }));
+        console.log(all([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], function (v) { return v > 9 }));
+    </script>
+
+</body>
+
+</html>
