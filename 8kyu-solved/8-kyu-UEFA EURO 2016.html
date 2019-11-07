@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 14:29:17
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 14:48:07
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UEFA EURO 2016</title>
+</head>
+
+<body>
+    <script>
+        function uefaEuro2016(teams, scores) {
+            // your code...
+            if(scores[0] > scores[1]){
+                return `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!`
+            }else if(scores[0] < scores[1]){
+                return `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!`
+            }else{
+                return `At match ${teams[0]} - ${teams[1]}, teams played draw.`
+            }
+        }
+    </script>
+</body>
+
+</html>

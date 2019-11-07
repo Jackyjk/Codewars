@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 14:48:14
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 14:49:39
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crash Override</title>
+</head>
+
+<body>
+    <script>
+        const firstLetter = str => str[0].toUpperCase()
+
+        const isValidName = name => /[a-z]/gi.test(name)
+
+        const aliasGen = (fName, sName) =>
+            isValidName(fName[0]) && isValidName(sName[0])
+                ? `${firstName[firstLetter(fName)]} ${surname[firstLetter(sName)]}`
+                : 'Your name must start with a letter from A - Z.'
+
+        console.log(aliasGen("Mike", "Millington"));
+    </script>
+</body>
+
+</html>

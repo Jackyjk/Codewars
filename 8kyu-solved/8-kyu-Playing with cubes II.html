@@ -1,0 +1,37 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 14:59:13
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 15:00:04
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Playing with cubes II</title>
+</head>
+
+<body>
+    <script>
+        class Cube {
+            constructor(n = 0) {
+                this.setSide(n)
+            }
+
+            getSide() {
+                return this.side
+            }
+
+            setSide(n) {
+                if (typeof n !== 'number') throw new Error('Only numbers accepted')
+                this.side = Math.abs(n)
+            }
+        }
+    </script>
+</body>
+
+</html>

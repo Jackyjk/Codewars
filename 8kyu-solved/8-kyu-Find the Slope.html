@@ -1,0 +1,27 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-07 14:52:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-07 14:54:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find the Slope</title>
+</head>
+
+<body>
+    <script>
+        const slope = ([x1, y1, x2, y2]) => {
+            const result = (y2 - y1) / (x2 - x1)
+            return isFinite(result) ? `${result}` : 'undefined'
+        }
+    </script>
+</body>
+
+</html>
