@@ -1,0 +1,32 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-08 21:09:16
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-08 21:10:45
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Change Machine</title>
+</head>
+
+<body>
+    <script>
+        const changeMe = moneyIn => {
+            if (moneyIn === '£5') return `${'20p '.repeat(5 * 5).trimRight()}`
+            if (moneyIn === '£2') return `${'20p '.repeat(5 * 2).trimRight()}`
+            if (moneyIn === '£1') return `${'20p '.repeat(5 * 1).trimRight()}`
+            if (moneyIn === '50p') return `${'20p '.repeat(2).trimRight()} 10p`
+            if (moneyIn === '20p') return `${'10p '.repeat(2).trimRight()}`
+
+            return moneyIn
+        }
+    </script>
+</body>
+
+</html>
