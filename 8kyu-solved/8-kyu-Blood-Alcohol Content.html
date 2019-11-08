@@ -1,0 +1,30 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-08 21:14:38
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-08 21:15:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood-Alcohol Content</title>
+</head>
+
+<body>
+    <script>
+        const bloodAlcoholContent = ({ ounces, abv }, weight, sex, time) =>
+            Number(
+                (
+                    ounces * abv * 5.14 / weight * (sex === 'male' ? 0.73 : 0.66) -
+                    0.015 * time
+                ).toFixed(4)
+            )
+    </script>
+</body>
+
+</html>
