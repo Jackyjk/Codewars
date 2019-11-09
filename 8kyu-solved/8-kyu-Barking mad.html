@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barking mad</title>
+</head>
+
+<body>
+    <script>
+        function Dog(breed) {
+            this.breed = breed;
+        }
+
+        var snoopy = new Dog("Beagle");
+
+        Dog.prototype.bark = function () {
+            return "Woof";
+        };
+
+        var scoobydoo = new Dog("Great Dane");
+    </script>
+</body>
+
+</html>

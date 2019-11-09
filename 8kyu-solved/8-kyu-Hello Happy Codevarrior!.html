@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Happy Codevarrior!</title>
+</head>
+
+<body>
+    <script>
+        class Warrior {
+            constructor(newName) {
+                this.wName = newName
+            }
+
+            name(newName) {
+                if (newName) {
+                    this.wName = newName
+                }
+                return this.wName
+            }
+        }
+
+        Warrior.prototype.toString = function () {
+            return `Hi! my name's ${this.wName}`
+        }
+    </script>
+</body>
+
+</html>
