@@ -1,0 +1,34 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 17:11:53
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:12:13
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #11: loop statement --break,continue</title>
+</head>
+
+<body>
+    <script>
+        function grabDoll(dolls) {
+            var bag = [];
+            for (let i = 0; i < dolls.length; i++) {
+                if (dolls[i] === 'Hello Kitty' || dolls[i] === 'Barbie doll') {
+                    bag.push(dolls[i])
+                } else continue
+
+                if (bag.length >= 3) break
+            }
+            return bag;
+        }
+    </script>
+</body>
+
+</html>

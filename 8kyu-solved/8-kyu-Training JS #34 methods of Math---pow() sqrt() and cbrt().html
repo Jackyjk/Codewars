@@ -1,0 +1,28 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 17:06:30
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:09:31
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #34: methods of Math---pow() sqrt() and cbrt()</title>
+</head>
+
+<body>
+    <script>
+        //是否为立方数  cbrt 返回立方根
+        const isIntegerCube = n => Number.isInteger(Math.cbrt(n))
+
+        const cutCube = (volume, n) => isIntegerCube(n) && isIntegerCube(volume / n)
+
+    </script>
+</body>
+
+</html>

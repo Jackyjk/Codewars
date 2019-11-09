@@ -1,0 +1,34 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 17:25:13
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:25:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #10: loop statement --for</title>
+</head>
+
+<body>
+    <script>
+        function pickIt(arr) {
+            var odd = [], even = [];
+            for (var i = 0; i <= arr.length - 1; i++) {
+                if (arr[i] % 2 == 0) {
+                    even.push(arr[i]);
+                } else {
+                    odd.push(arr[i]);
+                }
+            }
+            return [odd, even];
+        }
+    </script>
+</body>
+
+</html>

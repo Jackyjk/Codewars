@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 17:30:12
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:30:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #9: loop statement --while and do..while</title>
+</head>
+
+<body>
+    <script>
+        function padIt(str, n) {
+            let result = str
+            let i = 0
+
+            while (i < n) {
+                if (i % 2 === 0) {
+                    result = `*${result}`
+                } else {
+                    result = `${result}*`
+                }
+
+                i += 1
+            }
+
+            return result
+        }
+    </script>
+</body>
+
+</html>

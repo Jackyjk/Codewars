@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 17:19:51
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:20:28
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #14: Methods of Number object--toString() and toLocaleString()</title>
+</head>
+
+<body>
+    <script>
+        function colorOf(r, g, b) {
+            r = r.toString(16);
+            g = g.toString(16);
+            b = b.toString(16);
+            if (r.length < 2) { r = "0" + r };
+            if (g.length < 2) { g = "0" + g };
+            if (b.length < 2) { b = "0" + b };
+
+            return "#" + r + g + b;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-09 16:59:09
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-09 17:03:48
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #16: Methods of String object--slice(), substring() and substr()</title>
+</head>
+
+<body>
+    <script>
+        function cutIt(arr) {
+            //coding here...
+            const minLength = Math.min(...arr.map(str => str.length))
+            return arr.map(str => str.slice(0, minLength))
+        }
+
+        console.log(cutIt(["ab", "cde", "fgh"]));
+        console.log(cutIt(["abc", "defgh", "ijklmn"]));
+    </script>
+</body>
+
+</html>
