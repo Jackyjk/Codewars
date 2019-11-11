@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-11 22:13:50
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-11 22:22:58
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MinMinMax</title>
+</head>
+
+<body>
+    <script>
+
+        function minMinMax(array) {
+            // solution goes here!
+            let max = Math.max(...array);
+            let min = Math.min(...array);
+
+            let minAbs = 0;
+            for (let i = min; i <= max; i++) {
+                if (!array.includes(i)) { minAbs = i; break }
+            }
+            return [min, minAbs, max]
+        }
+
+        console.log(minMinMax([-1, 4, 5, -23, 24]));
+    </script>
+
+
+</body>
+
+</html>

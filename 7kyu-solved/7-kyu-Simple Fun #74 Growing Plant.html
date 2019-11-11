@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-11 22:25:47
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-11 22:28:15
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Fun #74: Growing Plant</title>
+</head>
+
+<body>
+    <script>
+        function growingPlant(upSpeed, downSpeed, desiredHeight) {
+            //coding and coding..
+            let currentHeight = 0;
+            for (var i = 1; ; i++) {
+                currentHeight += upSpeed;
+                if (currentHeight >= desiredHeight) {
+                    break;
+                }
+                else {
+                    currentHeight -= downSpeed;
+                }
+            }
+            return i;
+        }
+
+        console.log(growingPlant(10,9,4));
+    </script>
+</body>
+
+</html>

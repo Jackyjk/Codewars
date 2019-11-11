@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-11 22:29:04
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-11 22:37:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count the Digit</title>
+</head>
+
+<body>
+    <script>
+        function nbDig(n, d) {
+            var res = 0;
+            for (var i = 0; i <= n; i++) {
+                var square = (i * i + "").split("");
+                
+                square.forEach((s) => s == d ? res++ : null)
+            }
+             return res;
+        }
+
+        console.log(nbDig(5750, 0));
+        console.log(nbDig(10,1));
+    </script>
+</body>
+
+</html>
