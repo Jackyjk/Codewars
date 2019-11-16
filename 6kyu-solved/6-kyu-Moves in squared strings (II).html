@@ -1,0 +1,68 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-16 16:09:55
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-16 16:42:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moves in squared strings (II)</title>
+</head>
+
+<body>
+    <script>
+        /*
+        s = "abcd\nefgh\nijkl\nmnop"
+
+        We will study some transformations of this square of strings.
+
+        Clock rotation 180 degrees: rot
+        rot(s) => "ponm\nlkji\nhgfe\ndcba"
+        selfie_and_rot(s) (or selfieAndRot or selfie-and-rot) It is initial string + string obtained by clock rotation 180 degrees with dots interspersed in order (hopefully) to better show the rotation when printed.
+        s = "abcd\nefgh\nijkl\nmnop" --> 
+        "abcd....\nefgh....\nijkl....\nmnop....\n....ponm\n....lkji\n....hgfe\n....dcba"
+        */
+
+        
+        // //只对4个字母长度的有效
+        // function selfieAndRot(s) {
+        //     // your code
+        //     let new_str1 = oper(rot, s);
+        //     new_str1 = new_str1.split("\n").join("\n....");
+        //     console.log(new_str1);
+        //     let new_str2 = s.split("\n").join("....\n");
+        //     console.log(new_str2);
+        //     return `${new_str2}....\n....${new_str1}`
+        // }
+
+
+        //提交的代码
+        function selfieAndRot(strng) {
+            let n = strng.slice().split('\n')[0].length
+            let arr = strng.slice().split('\n').reverse().map(v => v.split('').reverse().join(``)).join(`\n${'.'.repeat(n)}`)
+            let arr2 = strng.slice().split('\n').join(`${'.'.repeat(n)}\n`)
+            return arr2 + `${'.'.repeat(n)}\n${'.'.repeat(n)}` + arr;
+        }
+
+        //逆序 反转
+        function rot(strng) {
+            let arr = strng.slice().split('\n').reverse().map(v => v.split('').reverse().join(``)).join('\n')
+            return arr
+        }
+        function oper(fct, s) {
+            // Your code
+            return fct(s);
+        }
+
+        console.log(oper(rot, "rkKv\ncofM\nzXkh\nflCB"));
+        console.log(oper(selfieAndRot, "xZBV\njsbS\nJcpN\nfVnP"));
+    </script>
+</body>
+
+</html>
