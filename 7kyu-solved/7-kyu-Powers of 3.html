@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Powers of 3</title>
+</head>
+
+<body>
+    <script>
+        function largestPower(n) {
+            let count = 0;
+            while (Math.pow(3, count) < n) count++;
+            // return the largest integer k such that 3^k < n
+            return count - 1;
+        }
+
+        console.log(largestPower(3));
+        console.log(largestPower(81));
+        console.log(largestPower(82));
+    </script>
+</body>
+
+</html>
