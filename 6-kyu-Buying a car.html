@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buying a car</title>
+</head>
+
+<body>
+    <script>
+        //2000 8000 1000 1.5
+        //自己所拥有的旧的车，二手车价格，每月节省金额，旧车和新车的价格每月降低1.5％。此外，损失的百分比在每两个月末增加0.5％。
+        function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
+            //your code here
+            let LossRatioBiMonth = 0.005;
+            if (startPriceOld >= startPriceNew) {
+                return [0, startPriceOld - startPriceNew];
+            } else {
+                var oldOneValue = startPriceOld;
+                var newOneValue = startPriceNew;
+                var month = 0;
+                var savingAmount = 0;
+
+                var ratio = 1 - (percentLossByMonth / 100);
+                while ((oldOneValue + savingAmount) < newOneValue) {
+                    month++;
+                    savingAmount += savingperMonth;
+
+                    ratio -= month % 2 == 0 ? LossRatioBiMonth : 0;
+
+                    oldOneValue *= ratio;
+                    newOneValue *= ratio;
+                }
+
+                var leftOverMoney = oldOneValue + savingAmount - newOneValue;
+
+                return [month, Math.round(leftOverMoney)];
+            }
+        }
+
+        function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
+
+            // Case 1 : the old man has enough money
+
+            //   We return 0 for the number of month and the difference between the two prices
+            if (startPriceOld >= startPriceNew) {
+                return [0, Math.round(startPriceOld - startPriceNew)];
+            }
+
+
+            // Case 2 : the old man doesn't have enough money
+
+            // We initiate two variables, months for the number of months he's been waiting
+            //   and total for the total money he has
+            var months = 0,
+                total = startPriceOld;
+
+            // As long as the old man doesn't have enough money, we loop again for a new month
+            while (total < startPriceNew) {
+                // We add the savingperMonth for the new month
+                total += savingperMonth;
+
+                // We adjust the price of the old car
+                total -= startPriceOld * percentLossByMonth / 100;
+
+
+                // Applying the interest rate on the new car price and 
+                startPriceNew -= startPriceNew * percentLossByMonth / 100;
+                startPriceOld -= startPriceOld * percentLossByMonth / 100;
+
+                // We increase the month counter
+                months++;
+
+                // Increasing the rate for all the even months (we use the increased rate immediately after month 1)
+                //   So each time the numbers of passed months is odd, we increase the rate
+                months % 2 !== 0 ? percentLossByMonth += 0.5 : percentLossByMonth;
+
+            } // end while
+
+            // Returning the number of months and what the old man has left after the purchase (rounded to units)
+            return [months, Math.round(total - startPriceNew)];
+
+        }
+    </script>
+</body>
+
+</html>
