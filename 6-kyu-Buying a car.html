@@ -52,34 +52,34 @@
 
             // Case 2 : the old man doesn't have enough money
 
-            // We initiate two variables, months for the number of months he's been waiting
-            //   and total for the total money he has
+            // 我们初始化两个变量，月代表他等待的月数
+            //   他所有的钱的总和
             var months = 0,
                 total = startPriceOld;
 
-            // As long as the old man doesn't have enough money, we loop again for a new month
+            // 只要那老人没有足够的钱，我们就再打一个月的循环
             while (total < startPriceNew) {
-                // We add the savingperMonth for the new month
+                // 我们每月为新的一个月增加储蓄
                 total += savingperMonth;
 
-                // We adjust the price of the old car
+                // 我们调整了旧车的价格
                 total -= startPriceOld * percentLossByMonth / 100;
 
 
-                // Applying the interest rate on the new car price and 
+                // 适用于新车价格的利率
                 startPriceNew -= startPriceNew * percentLossByMonth / 100;
                 startPriceOld -= startPriceOld * percentLossByMonth / 100;
 
-                // We increase the month counter
+                // 我们增加了月计数器
                 months++;
 
-                // Increasing the rate for all the even months (we use the increased rate immediately after month 1)
-                //   So each time the numbers of passed months is odd, we increase the rate
+                //增加所有月份的利率(我们使用第1个月之后立即增加的利率)
+
+                //因此，每过去几个月的数字是奇数，我们就增加这个比率
                 months % 2 !== 0 ? percentLossByMonth += 0.5 : percentLossByMonth;
 
-            } // end while
-
-            // Returning the number of months and what the old man has left after the purchase (rounded to units)
+            }
+            //返回购买后的月数和老人剩余的钱(四舍五入)
             return [months, Math.round(total - startPriceNew)];
 
         }
