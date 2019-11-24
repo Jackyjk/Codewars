@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anchorize me!</title>
+</head>
+
+<body>
+    <script>
+        function anchorize(text) {
+            return text.replace(
+                /((http|https|ftp|ftps|file|smb):\/{2}[a-zA-Z\d:\/.]+)\b/gim,
+                '<a href="$1">$1</a>'
+            );
+        }
+        //hello <a href="http://world.com">http://world.com</a> !
+        console.log(anchorize('hello http://world.com !'));
+    </script>
+</body>
+
+</html>
