@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Two Joggers</title>
+</head>
+
+<body>
+    <script>
+        // 先求这两个数的最小公倍数，然后再分别除以Bob、Charles的长度，即可得他们俩分别的圈数。
+        var nbrOfLaps = function (x, y) {
+            var lcm = x;
+            while (lcm % y != 0) {
+                lcm += x;
+            }
+            return [lcm / x, lcm / y];
+        }
+    </script>
+</body>
+
+</html>
