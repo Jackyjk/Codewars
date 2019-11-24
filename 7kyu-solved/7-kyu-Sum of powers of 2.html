@@ -34,12 +34,14 @@
         if (check_two(num)) {
             return [num];
         } else {
-        //处理不是 2 的次方 相加的 数字
-            
+            //处理不是 2 的次方 相加的 数字
+
         }
 
 
     }
+
+    const powers = n => n.toString(2).split('').reverse().map((v, i) => +v ? 2 ** i : 0).filter(a => a)
 
 
 
