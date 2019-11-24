@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directions Reduction</title>
+</head>
+
+<body>
+    <script>
+        function dirReduc(arr) {
+            // ...
+            /*
+            let north_num = 0;
+            let south_num = 0;
+            let west_num = 0;
+            let east_num = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == 'NORTH') {
+                    north_num++;
+                } else if (arr[i] == 'SOUTH') {
+                    south_num++;
+                } else if (arr[i] == 'EAST') {
+                    east_num++;
+                } else {
+                    west_num++;
+                }
+            }
+            //每个只出现一次
+            if ((north_num == 1 && south_num == 1) && (east_num == 1 && west_num == 1)) {
+                return arr;
+            } else {
+                return `${north_num} ${south_num} ${east_num} ${west_num}`
+                let we = east_num - west_num;
+                let ns = north_num - south_num;
+                if (we == 0 && ns == 0) {
+                    return [];
+                }else{
+
+                }
+            }
+        */
+            //使用正则
+            let str = arr.join(""),
+                pattern = /NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/;
+            while (pattern.test(str)) str = str.replace(pattern, "");
+            return str.match(/(NORTH|SOUTH|EAST|WEST)/g) || [];
+        }
+
+        /*
+        function dirReduc(arr) {
+            var path = [];
+            for (var i = 0; i < arr.length; i++) {
+                path.push(arr[i]);
+                if (path[path.length - 2] === 'NORTH' && arr[i] === 'SOUTH') path.splice(path.length - 2, 2);
+                if (path[path.length - 2] === 'SOUTH' && arr[i] === 'NORTH') path.splice(path.length - 2, 2);
+                if (path[path.length - 2] === 'EAST' && arr[i] === 'WEST') path.splice(path.length - 2, 2);
+                if (path[path.length - 2] === 'WEST' && arr[i] === 'EAST') path.splice(path.length - 2, 2);
+            }
+            return path;
+        }
+        */
+
+        console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
+        console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+        console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+    </script>
+</body>
+
+</html>
