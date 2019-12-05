@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is that a real phone number? (British version)</title>
+</head>
+
+<body>
+    <script>
+        function validateNumber(str) {
+            return /^(\+44|0|-0)?7(-*[0-9]){9}$/.test(str) ? 'In with a chance' : 'Plenty more fish in the sea'
+        }
+    </script>
+</body>
+
+</html>
