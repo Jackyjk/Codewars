@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draw stairs</title>
+</head>
+
+<body>
+    <script>
+        // function drawStairs(n) {
+        //     // your code here
+        //     if (n == 1) {
+        //         return 'I';
+        //     } else {
+        //         let str = '';
+        //         let str_sp = ' '; //space
+        //         for (let i = 0; i < n; i++) {
+        //             str += `${str_sp.repeat(i)}I\n`;
+        //         }
+        //         return str;
+        //     }
+
+        // }
+
+        function drawStairs(n) {
+            let str = ""
+            for (let i = 0; i < n; i++)
+                str = str + "I\n" + " ".repeat(i);
+            return str + "I";
+        }
+
+        console.log(drawStairs(7));
+    </script>
+
+</body>
+
+</html>
