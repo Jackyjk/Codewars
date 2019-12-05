@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum of Intervals</title>
+</head>
+
+<body>
+    <script>
+        function sumIntervals(intervals) {
+            let arr = [];
+            for (let i = 0; i < intervals.length; i++) {
+                arr.push(
+                    Array.from({
+                            length: intervals[i][1] - intervals[i][0]
+                        },
+                        (x, j) => j + 1 + intervals[i][0]
+                    )
+                );
+            }
+            return [...new Set([].concat(...arr))].length;
+        }
+
+        console.log(sumIntervals([[1,4],[7, 10],[3, 5]]));
+    </script>
+</body>
+
+</html>
