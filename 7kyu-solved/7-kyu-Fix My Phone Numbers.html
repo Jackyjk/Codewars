@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fix My Phone Numbers</title>
+</head>
+
+<body>
+    <script>
+        function isItANum(str) {
+            str = str.replace(/[^0-9]/gi, '')
+            return str.length !== 11 ? 'Not a phone number' : str
+        }
+    </script>
+</body>
+
+</html>
