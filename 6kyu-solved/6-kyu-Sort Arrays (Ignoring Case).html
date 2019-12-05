@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort Arrays (Ignoring Case)</title>
+</head>
+
+<body>
+    <script>
+        // function sortme(names) {
+
+        //     let final_name = [];
+        //     for (let i = 0; i < names.length; i++) {
+        //         final_name[i] = names[i].toUpperCase()
+        //     }
+        //     return final_name.sort()
+        // }
+
+        sortme = function (names) {
+            return names.sort((a, b) => a.toLowerCase() > b.toLowerCase());
+        }
+
+
+        console.log(sortme(["Hello", "there", "I'm", "fine"]));
+        console.log(sortme(["C", "d", "a", "B"]));
+    </script>
+</body>
+
+</html>
