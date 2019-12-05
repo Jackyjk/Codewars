@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thinking & Testing : Uniq or not Uniq</title>
+</head>
+
+<body>
+    <script>
+        function unique(arr) {
+            return Array.from(new Set(arr))
+        }
+
+
+        function testit(a, b) {
+            return unique(a).concat(unique(b)).sort(function (a, b) {
+                return a - b
+            });
+        }
+
+        function testit2(a, b) {
+            return [...new Set(a)].concat([...new Set(b)]).sort(function (a, b) {
+                return a - b
+            });
+        }
+
+        console.log(testit([1, 2], [3, 4]));
+        console.log(testit([1, 2], [1, 2]));
+        console.log(testit([1, 2], [3, 3, 3]));
+        console.log(testit([9, 8, 6, 6, 1, 7], [6, 4, 2, 7, 2, 4, 6, 7, 6, 10]));
+        console.log(testit2([9, 8, 6, 6, 1, 7], [6, 4, 2, 7, 2, 4, 6, 7, 6, 10]));
+    </script>
+</body>
+
+</html>
