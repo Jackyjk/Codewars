@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Fun #4: Phone Call</title>
+</head>
+
+<body>
+    <script>
+        function phoneCall(min1, min2_10, min11, s) {
+            if (min1 > s) return 0;
+            let cost = 0;
+            for (let i = 1;; i++) {
+                if (i == 1) {
+                    cost += min1;
+                }
+                if (i > 1 && i <= 10) {
+                    cost += min2_10;
+                }
+                if (i >= 11) {
+                    cost += min11;
+                }
+                if (cost > s)
+                    return i - 1;
+                if (cost == s)
+                    return i;
+            }
+        }
+
+        console.log(phoneCall(3, 1, 2, 20));
+    </script>
+</body>
+
+</html>
