@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help your fellow warrior!</title>
+</head>
+
+<body>
+    <script>
+        function getHonorPath(honorScore, targetHonorScore) {
+            return honorScore < targetHonorScore ?
+                {
+                    "1kyus": Math.floor((targetHonorScore - honorScore) / 2),
+                    "2kyus": (targetHonorScore - honorScore) % 2
+                } :
+                {};
+        }
+    </script>
+</body>
+
+</html>
