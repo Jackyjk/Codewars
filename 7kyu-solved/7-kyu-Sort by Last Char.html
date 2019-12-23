@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort by Last Char</title>
+</head>
+
+<body>
+    <script>
+        function last(x) {
+            // return x.split(' ').reverse().sort();
+            //直接判断最后一位字符的顺序
+            return x.split(" ").sort((a, b) => a[a.length - 1] > b[b.length - 1]);
+        }
+        console.log(last('take me to semynak'));
+    </script>
+</body>
+
+</html>
