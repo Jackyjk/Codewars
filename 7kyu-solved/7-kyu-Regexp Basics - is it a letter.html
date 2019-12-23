@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regexp Basics - is it a letter?</title>
+</head>
+
+<body>
+    <script>
+        String.prototype.isLetter = function () {
+            const str = this.slice();
+            if (str.length !== 1) return false;
+            if (str.match(/[a-zA-Z]/)) return true;
+            return false;
+        }
+    </script>
+</body>
+
+</html>
