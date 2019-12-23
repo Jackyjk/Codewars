@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Star Code Challenge #22</title>
+</head>
+
+<body>
+    <script>
+        function toTime(seconds) {
+            let h = 0;
+            while (seconds >= 3600) {
+                h += 1;
+                seconds -= 3600;
+            }
+            let sec = Math.trunc(seconds / 60);
+            return `${h} hour(s) and ${sec} minute(s)`;
+        }
+    </script>
+</body>
+
+</html>
