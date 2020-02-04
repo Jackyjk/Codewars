@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Odd or Even</title>
+</head>
+<script>
+    function oddOrEven(array) {
+        //enter code here
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i]
+        }
+
+        return sum % 2 == 0 ? 'even' : 'odd';
+    }
+
+    console.log(oddOrEven([0]));
+    console.log(oddOrEven([1]));
+    console.log(oddOrEven([0, -5, 2]));
+</script>
+
+<body>
+
+</body>
+
+</html>
