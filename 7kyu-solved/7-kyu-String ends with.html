@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String ends with?</title>
+</head>
+
+<body>
+    <script>
+        function solution(str, ending) {
+            return new RegExp(ending + "$", "i").test(str);
+        }
+
+        console.log(solution('abcde', 'cde'));
+        console.log(solution('abcde', 'abc'));
+    </script>
+</body>
+
+</html>
