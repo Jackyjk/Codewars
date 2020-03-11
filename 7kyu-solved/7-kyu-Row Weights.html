@@ -36,7 +36,7 @@ The first element 80 is the total weight of team 1, and the second element 0 is 
 */
 
         function rowWeights(array) {
-            return arr.reduce((a, b, i) => (a[i % 2] += b, a), [0, 0])
+            return array.reduce((a, b, i) => (a[i % 2] += b, a), [0, 0])
         }
     </script>
 </body>
