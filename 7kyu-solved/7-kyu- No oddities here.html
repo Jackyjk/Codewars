@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No oddities here</title>
+</head>
+<script>
+  /**
+ * describe( "Testing some inputs", function(){
+  it( "should return [0] for [0,1]", function(){
+    Test.assertSimilar( noOdds( [0,1] ), [0] )
+  });
+  it( "should return [0,2] for [0,1,2,3]", function(){
+    Test.assertSimilar( noOdds( [0,1,2,3] ), [0,2] )
+  });
+});
+ */
+
+  function noOdds(values) {
+    // Return all non-odd values
+    var arr = []
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] % 2 == 0) {
+        arr.push(values[i])
+      }
+    }
+    return arr
+  }
+
+  console.log(noOdds([0, 1]));
+  console.log(noOdds([0, 1, 2, 3]));
+</script>
+
+<body>
+
+</body>
+
+</html>
