@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Pangram</title>
+</head>
+
+<body>
+    <script>
+        function isPangram(string) {
+            //获取分离之后的字符串
+            let alpha = string.toUpperCase().split("")
+            for (let i = 65; i < 91; i++) {
+                //获取ASCII值
+                let gamma = String.fromCharCode(i)
+                //判断是否在其中
+                if (alpha.includes(gamma)) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            return true
+        }
+
+        console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+        console.log(isPangram("This is not a pangram."));
+    </script>
+</body>
+
+</html>
