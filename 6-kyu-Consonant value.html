@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consonant value</title>
+</head>
+<script>
+    /*
+    Given a lowercase string that has alphabetic characters only and no spaces, 4
+    return the highest value of consonant substrings. 
+    Consonants are any letters of the alphabet except "aeiou".
+
+    We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
+
+    For example, for the word "zodiacs", let's cross out the vowels. We get: "z o d ia cs"
+*/
+    // split to get the final arr
+    function get_finalStr(str) {
+        var arr_split = str.split(/[\a/e/i/o/u]+/)
+        if (arr_split.length == 0) return 0
+        return arr_split
+    }
+
+    function solve(s) {
+        if (s.length == '') return 0
+        var str_arr = get_finalStr(s) //分割aeiou之后的
+        var arr = [] //分割aeiou之后的小的字符串数组
+        for (let i = 0; i < str_arr.length; i++) {
+            arr[i] = str_arr[i].split('')
+        }
+        var num = [] //最终要比较的数字数组
+        var flag = 0 //解决直接使用num数组返回值为NaN的问题
+        for (let i = 0; i < arr.length; i++) {
+            flag = 0 //刷新flag的值
+            for (let j = 0; j < arr[i].length; j++) {
+                // console.log((arr[i][j].charCodeAt() - 96))
+                flag += arr[i][j].charCodeAt() - 96
+                num.push(flag)
+            }
+        }
+        // 最终输出的最大的值
+
+        var last_num = 0
+        last_num = num.sort((a, b) => {
+            return a - b
+        })
+        return last_num[num.length - 1]
+    }
+    console.log(solve("zodiacs")) //26
+    console.log(solve("chruschtschov")) //80
+    console.log(solve("khrushchev")) //38
+    console.log(solve("strength")) //57
+    console.log(solve("catchphrase")) //73
+    console.log(solve("twelfthstreet")) //103
+    console.log(solve("mischtschenkoana")) //80
+</script>
+
+<body>
+
+</body>
+
+</html>
