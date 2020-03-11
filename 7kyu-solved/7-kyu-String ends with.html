@@ -9,10 +9,14 @@
 
 <body>
     <script>
+        /*
         function solution(str, ending) {
             return new RegExp(ending + "$", "i").test(str);
         }
 
+        */
+
+        const solution = (str, ending) => str.endsWith(ending)
         console.log(solution('abcde', 'cde'));
         console.log(solution('abcde', 'abc'));
     </script>
