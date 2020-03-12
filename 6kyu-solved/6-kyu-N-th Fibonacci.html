@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-th Fibonacci</title>
+</head>
+
+<body>
+    <script>
+        /**
+  nthFibo(4) == 2
+Because 2 is the 4th number in the Fibonacci Sequence.
+*/
+        function nthFibo(n) {
+            let fib = [0, 1];
+            for (let i = 0; i < n; i++) {
+                fib.push(fib[i] + fib[i + 1]);
+            }
+            return fib[n - 1];
+        }
+    </script>
+</body>
+
+</html>
