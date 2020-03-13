@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete occurrences of an element if it occurs more than n times</title>
+</head>
+
+<body>
+    <script>
+        /**
+         deleteNth ([1,1,1,1],2) // return [1,1]
+
+         deleteNth ([20,37,20,21],1) // return [20,37,21]
+        */
+
+        // 将arr分成大小为n的组，每组之间进行比较 相同则pop，不同则push
+        /*
+                function deleteNth(arr, n) {
+                    // ...
+                    // 数组根据n的大小进行分组
+                    var result = [];
+                    for (let i = 0, len = arr.length; i < len; i += n) {
+                        result.push(arr.slice(i, i + n));
+                    }
+
+                    console.log(result);
+                    // 设置标志位
+                    let flag = result[0].sort().toString()
+                    //删除相同的分组
+                    for (let i = 1; i < result.length; i++) {
+                        if (result[i].sort().toString() === flag) {
+                            result.splice(i, 1)
+                        }
+                    }
+                    //  最终输出数组
+                    var final_arr = []
+                    //合并多个数组为一个
+                    for (var i in result) {
+                        final_arr = final_arr.concat(result[i])
+                    }
+                    return final_arr
+                }
+
+        */
+
+        function deleteNth(arr, n) {
+            // 如果数组为空
+            if (!arr) {
+                return null;
+            }
+            // 分组不合法
+            if (n < 1) {
+                return [];
+            }
+
+            var result = [];
+            // 使用数组的元素设置为对象中键值对的键，对应的值就是此键出现的次数
+            var itemCounts = {};
+            for (var index = 0; index < arr.length; index++) {
+                var item = arr[index];
+                var count = itemCounts[item] || 0;
+                //如果相同元素的个数没有达到分组的大小  就进行下面的代码操作
+                if (count < n) {
+                    result.push(item);
+                    // 将分组内相同的元素进行计数
+                    itemCounts[item] = count + 1;
+                }
+            }
+
+            return result;
+        }
+
+        console.log(deleteNth([20, 37, 20, 21], 1));
+        // console.log(deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2], 3));
+    </script>
+</body>
+
+</html>
