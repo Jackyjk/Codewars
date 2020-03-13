@@ -18,8 +18,12 @@ Because 2 is the 4th number in the Fibonacci Sequence.
             for (let i = 0; i < n; i++) {
                 fib.push(fib[i] + fib[i + 1]);
             }
-            return fib[n - 1];
+            return fib[n];
         }
+
+        console.log(nthFibo(50));
+        console.log(nthFibo(3));
+        console.log(nthFibo(5));
     </script>
 </body>
 

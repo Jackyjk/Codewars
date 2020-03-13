@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob's reversing obfuscator</title>
+</head>
+<script>
+    // Marker is used as the dividing line to reverse all the characters behind
+    /*
+    function decoder(encoded, marker) {
+        // return "I give up, please help!";
+        let arr = []
+        arr = (encoded.split(marker)[1]).split("")
+        // return `${encoded.split(marker)[0]}${(arr).reverse().join('')}`
+    }
+    */
+
+    function decoder(encoded, marker) {
+        let arr = encoded.split(marker),
+            b = arr.filter((_, i) => i % 2 === 0),
+            x = arr.filter((_, i) => i % 2 === 1).reverse().map(v => v.split('').reverse().join(''));
+        // console.log(b);
+        // console.log(x);
+        return b.concat(x).join('');
+    }
+
+    console.log(decoder("Lor-.tile gnicsipida rutetcesnoc ,tema tis rolod muspi me", '-'));
+</script>
+
+<body>
+
+</body>
+
+</html>
