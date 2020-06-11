@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Halving Sum</title>
+    </head>
+    <script>
+        //25  =>  25 + 12 + 6 + 3 + 1 = 47
+        function halvingSum(n) {
+            let num = 0;
+            let newNum = n;
+            for (; ;) {
+                newNum = parseInt(newNum / 2);
+                num++;
+                if (newNum <= 1) break;
+            }
+            // console.log(num);
+            let finalNum = n;
+            for (let i = 0; i < num; i++) {
+                finalNum += parseInt(n / 2);
+                n = parseInt(n / 2);
+                // console.log(n);
+            }
+            return finalNum;
+        }
+        console.log(halvingSum(25));
+    </script>
+
+    <body>
+
+    </body>
+
+</html>
