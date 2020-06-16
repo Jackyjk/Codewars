@@ -15,6 +15,19 @@ console.log(solve(3));
 console.log(solve(4));
 console.log(solve(5));
 console.log(solve(7));
-console.log(solve(9));
-console.log(solve(13));
-console.log(solve(88901));
+
+
+function solve1 (n) {
+    let i = 1
+    while (i < n) {
+        if ((Math.sqrt(((i * i) + n)) % 1) === 0) {
+            return i * i
+        }
+        i++
+    }
+    return -1
+}
+
+console.log(solve1(9));
+console.log(solve1(13));
+console.log(solve1(88901));
