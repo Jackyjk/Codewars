@@ -1,5 +1,6 @@
 # Codewars
 Set of resolved titles on Code wars
+![](https://www.codewars.com/users/Jackyjk)
 
 ![](https://www.codewars.com/users/Jackyjk/badges/large) 
 
