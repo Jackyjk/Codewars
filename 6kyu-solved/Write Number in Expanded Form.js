@@ -61,3 +61,20 @@ console.log(expandedForm(12))
 console.log(expandedForm(42))
 console.log(expandedForm(4320))
 console.log(expandedForm(70304))
+
+function expandedForm (num) {
+    if (num < 10) return `${num}`;
+    let over = num % (Math.pow(10, (num.toString().length - 1)));
+    if (!over) return `${num}`;
+    return `${num - over} + ${expandedForm(over)}`;
+}
+
+const expandedForm = n =>
+    n
+        .toString()
+        .split("")
+        .reverse()
+        .map((a, i) => a * Math.pow(10, i))
+        .filter(a => a > 0)
+        .reverse()
+        .join(" + ");
