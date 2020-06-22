@@ -1,5 +1,5 @@
 # Codewars
-Set of resolved titles on Code wars
+Set of resolved titles on Code wars :boom:
 ![](https://www.codewars.com/users/Jackyjk)
 
 ![](https://www.codewars.com/users/Jackyjk/badges/large) 
@@ -10,4 +10,4 @@ Set of resolved titles on Code wars
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Jackyjk/Codewars)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Jackyjk/Codewars)
  
-If help you,please give me one star ⭐
+If it helps you,please give me one :star:
