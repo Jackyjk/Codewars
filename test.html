@@ -62,33 +62,74 @@
         // qipan(12);
         // qipan(64);
 
-        function expandedForm(num) {
-            // Your code here
-            let number = []
-            let flag = true
-            while (flag) {
-                if (num.toString().length !== 0) {
-                    if (num.toString().length <= 2) {
-                        number.push(num)
-                        flag = false
-                    } else {
-                        if (num.toString().length % 2 === 0) {
-                            number.push(parseInt(num / Math.pow(10, num.toString().length)))
-                            num -= number[number.length - 1] * Math.pow(10, num.toString().length - 1)
-                        } else {
-                            number.push(parseInt(num / Math.pow(10, num.toString().length - 1)))
-                            num -= number[number.length - 1] * Math.pow(10, num.toString().length - 1)
-                        }
+        // function expandedForm(num) {
+        //     // Your code here
+        //     let number = []
+        //     let flag = true
+        //     while (flag) {
+        //         if (num.toString().length !== 0) {
+        //             if (num.toString().length <= 2) {
+        //                 number.push(num)
+        //                 flag = false
+        //             } else {
+        //                 if (num.toString().length % 2 === 0) {
+        //                     number.push(parseInt(num / Math.pow(10, num.toString().length)))
+        //                     num -= number[number.length - 1] * Math.pow(10, num.toString().length - 1)
+        //                 } else {
+        //                     number.push(parseInt(num / Math.pow(10, num.toString().length - 1)))
+        //                     num -= number[number.length - 1] * Math.pow(10, num.toString().length - 1)
+        //                 }
+        //             }
+        //         } else {
+        //             flag = false
+        //         }
+        //     }
+        //     return number
+        // }
+
+        // // console.log(expandedForm(432))
+        // console.log(expandedForm(70304))
+
+        function prime(num) {
+            let primeArr = [];
+            for (let i = 1; i < num; i++) {
+                for (var j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        break;
                     }
-                } else {
-                    flag = false
+                }
+                if (i <= j && i != 1) {
+                    primeArr.push(i);
                 }
             }
-            return number
+            return primeArr
         }
 
-        // console.log(expandedForm(432))
-        console.log(expandedForm(70304))
+        function arrCreate(num1, num2) {
+            if (num1 >= num2) return []
+            let arr = []
+            for (let i = num1; i <= num2; i++) {
+                arr.push(i)
+            }
+            return arr
+        }
+
+        function sumOfPrimeDistance(arr) {
+            //coding and coding..
+            let newArr = prime(arr[arr.length - 1])
+            let count = 0
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    let arr2 = arrCreate(arr[i], arr[j])
+                    for (let k = 0; k < arr2.length; k++) {
+                        if (newArr.includes(arr2[k])) count++
+                    }
+                }
+            }
+            return count
+        }
+
+        console.log(sumOfPrimeDistance([4, 6, 12]));
     </script>
 
     <body>
