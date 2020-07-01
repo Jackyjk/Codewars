@@ -131,22 +131,43 @@
 
         // console.log(sumOfPrimeDistance([4, 6, 12]));
 
-        function toWeirdCase(string) {
-            let finalArr = []
-            let strArr = string.split(" ")
-            for (let i = 0; i < strArr.length; i++) {
-                for (let j = 0; j < strArr[i].length; j++) {
-                    if (strArr[i][j] !== ' ') {
-                        j % 2 === 0 ? finalArr.push(strArr[i][j].toUpperCase()) : finalArr.push(strArr[i][j].toLowerCase())
-                    } else {
-                        finalArr.push(" ")
-                    }
+        // function toWeirdCase(string) {
+        //     let finalArr = []
+        //     let strArr = string.split(" ")
+        //     for (let i = 0; i < strArr.length; i++) {
+        //         for (let j = 0; j < strArr[i].length; j++) {
+        //             if (strArr[i][j] !== ' ') {
+        //                 j % 2 === 0 ? finalArr.push(strArr[i][j].toUpperCase()) : finalArr.push(strArr[i][j].toLowerCase())
+        //             } else {
+        //                 finalArr.push(" ")
+        //             }
+        //         }
+        //     }
+        //     return finalArr.join(" ")
+        // }
+
+        // console.log(toWeirdCase("Weird string case"))
+
+        function busTimer(time) {
+            let num = 0
+            let num1 = Number(time.split(":")[1]) + 5
+            if (num1 % 15 === 0) return 0
+            for (let i = 1; i <= 4; i++) {
+                if (num1 < 15 * i) {
+                    num = 15 * i - num1
+                    break
                 }
             }
-            return finalArr.join(" ")
+            if (Number(time.split(":")[0] <= 5)) num = (6 - Number(time.split(":")[0])) * 60 - num + 5
+            return num
         }
 
-        console.log(toWeirdCase("Weird string case"))
+
+        console.log(busTimer("2:05"))
+        // console.log(busTimer("5:00"))
+        // console.log(busTimer("10:00"))
+        // console.log(busTimer("12:10"))
+        // console.log(busTimer("12:11"))
     </script>
 
     <body>
