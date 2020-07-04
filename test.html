@@ -148,26 +148,45 @@
 
         // console.log(toWeirdCase("Weird string case"))
 
-        function busTimer(time) {
-            let num = 0
-            let num1 = Number(time.split(":")[1]) + 5
-            if (num1 % 15 === 0) return 0
-            for (let i = 1; i <= 4; i++) {
-                if (num1 < 15 * i) {
-                    num = 15 * i - num1
-                    break
-                }
-            }
-            if (Number(time.split(":")[0] <= 5)) num = (6 - Number(time.split(":")[0])) * 60 - num + 5
-            return num
-        }
+        // function busTimer(time) {
+        //     let num = 0
+        //     let num1 = Number(time.split(":")[1]) + 5
+        //     if (num1 % 15 === 0) return 0
+        //     for (let i = 1; i <= 4; i++) {
+        //         if (num1 < 15 * i) {
+        //             num = 15 * i - num1
+        //             break
+        //         }
+        //     }
+        //     if (Number(time.split(":")[0] <= 5)) num = (6 - Number(time.split(":")[0])) * 60 - num + 5
+        //     return num
+        // }
 
 
-        console.log(busTimer("2:05"))
+        // console.log(busTimer("2:05"))
         // console.log(busTimer("5:00"))
         // console.log(busTimer("10:00"))
         // console.log(busTimer("12:10"))
         // console.log(busTimer("12:11"))
+
+        function getScore(arr) {
+            // your code here
+            let arr1 = [0, 40, 100, 300, 1200], sum = 0, count = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr1[arr[i]]
+                count += arr[i]
+                if (count >= 10) {
+                    for (let j = 0; j < arr1.length; j++) {
+                        arr1[j] = arr1[j] * (Number((count / 10).toFixed(0)) + 1)
+                    }
+                    count = 0
+                }
+            }
+            // return sum
+        }
+
+        console.log(getScore([2, 0, 4, 2, 2, 3, 0, 0, 3, 3]))
+
     </script>
 
     <body>
