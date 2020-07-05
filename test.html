@@ -169,24 +169,56 @@
         // console.log(busTimer("12:10"))
         // console.log(busTimer("12:11"))
 
-        function getScore(arr) {
-            // your code here
-            let arr1 = [0, 40, 100, 300, 1200], sum = 0, count = 0
-            for (let i = 0; i < arr.length; i++) {
-                sum += arr1[arr[i]]
-                count += arr[i]
-                if (count >= 10) {
-                    for (let j = 0; j < arr1.length; j++) {
-                        arr1[j] = arr1[j] * (Number((count / 10).toFixed(0)) + 1)
-                    }
-                    count = 0
-                }
+        // function getScore(arr) {
+        //     // your code here
+        //     let arr1 = [0, 40, 100, 300, 1200], sum = 0, count = 0
+        //     for (let i = 0; i < arr.length; i++) {
+        //         sum += arr1[arr[i]]
+        //         count += arr[i]
+        //         if (count >= 10) {
+        //             for (let j = 0; j < arr1.length; j++) {
+        //                 arr1[j] = arr1[j] * (Number((count / 10).toFixed(0)) + 1)
+        //             }
+        //             count = 0
+        //         }
+        //     }
+        //     // return sum
+        // }
+
+        // console.log(getScore([2, 0, 4, 2, 2, 3, 0, 0, 3, 3]))
+
+        // function cycle(n) {
+        //     if (n % 2 == 0 || n % 5 == 0) {
+        //         return -1;
+        //     } else {
+        //         let res = 10 % n,
+        //             c = 1;
+        //         while (res != 1) {
+        //             res = (res * 10) % n;
+        //             c++;
+        //         }
+        //         return c;
+        //     }
+        // }
+
+        // console.log(cycle(21));
+
+        function solve(st) {
+            //..
+            let strArr = Array.from(new Set(st.split("")))
+            // console.log(strArr);
+            let finalArr = []
+            for (let i = 0; i < strArr.length; i++) {
+                finalArr.push(st.lastIndexOf(strArr[i]) - st.indexOf(strArr[i]))
             }
-            // return sum
+            let indexOfMax = finalArr.indexOf(Math.max(...finalArr));
+            return strArr[indexOfMax]
         }
 
-        console.log(getScore([2, 0, 4, 2, 2, 3, 0, 0, 3, 3]))
-
+        console.log(solve('axyzxyz'));
+        console.log(solve('bcd'));
+        console.log(solve('aab'));
+        console.log(solve('aabccc'));
     </script>
 
     <body>
