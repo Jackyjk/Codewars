@@ -203,22 +203,47 @@
 
         // console.log(cycle(21));
 
-        function solve(st) {
-            //..
-            let strArr = Array.from(new Set(st.split("")))
-            // console.log(strArr);
-            let finalArr = []
-            for (let i = 0; i < strArr.length; i++) {
-                finalArr.push(st.lastIndexOf(strArr[i]) - st.indexOf(strArr[i]))
-            }
-            let indexOfMax = finalArr.indexOf(Math.max(...finalArr));
-            return strArr[indexOfMax]
-        }
+        // function solve(st) {
+        //     //..
+        //     let strArr = Array.from(new Set(st.split("")))
+        //     // console.log(strArr);
+        //     let finalArr = []
+        //     for (let i = 0; i < strArr.length; i++) {
+        //         finalArr.push(st.lastIndexOf(strArr[i]) - st.indexOf(strArr[i]))
+        //     }
+        //     let indexOfMax = finalArr.indexOf(Math.max(...finalArr));
+        //     return strArr[indexOfMax]
+        // }
 
-        console.log(solve('axyzxyz'));
-        console.log(solve('bcd'));
-        console.log(solve('aab'));
-        console.log(solve('aabccc'));
+        // console.log(solve('axyzxyz'));
+        // console.log(solve('bcd'));
+        // console.log(solve('aab'));
+        // console.log(solve('aabccc'));
+
+        var wordWrap = function (str) {
+            // code goes here
+            let strArr = []
+            strArr = str.split``
+            flag = false
+            let j = 0
+            for (let i = 1; i <= strArr.length; i++) {
+                if (i % (24 + j) == 0) {
+                    if (strArr[i] != ' ') {
+                        strArr.splice(i, 0, "-\n")
+                        flag = !flag
+                    }
+                    else {
+                        strArr.splice(i, 0, "\n")
+                        flag = !flag
+                    }
+                    if (flag) j++
+                }
+            }
+            return strArr.join``
+        };
+
+        var input = "The quick brown fox jumped over the lazy developer.";
+        console.log(wordWrap(input));
     </script>
 
     <body>
