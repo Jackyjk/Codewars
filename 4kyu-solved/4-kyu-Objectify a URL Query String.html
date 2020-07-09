@@ -16,6 +16,7 @@
 </head>
 <script>
     function convertQueryToMap(query) {
+        if(query.length == 0) return {}
         // add your code here
         let res = {};
         query = query.split('&'); //& 进行分割

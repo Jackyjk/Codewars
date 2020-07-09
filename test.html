@@ -220,30 +220,43 @@
         // console.log(solve('aab'));
         // console.log(solve('aabccc'));
 
-        var wordWrap = function (str) {
-            // code goes here
-            let strArr = []
-            strArr = str.split``
-            flag = false
-            let j = 0
-            for (let i = 1; i <= strArr.length; i++) {
-                if (i % (24 + j) == 0) {
-                    if (strArr[i] != ' ') {
-                        strArr.splice(i, 0, "-\n")
-                        flag = !flag
-                    }
-                    else {
-                        strArr.splice(i, 0, "\n")
-                        flag = !flag
-                    }
-                    if (flag) j++
+        // var wordWrap = function (str) {
+        //     // code goes here
+        //     let strArr = []
+        //     strArr = str.split``
+        //     flag = false
+        //     let j = 0
+        //     for (let i = 1; i <= strArr.length; i++) {
+        //         if (i % (24 + j) == 0) {
+        //             if (strArr[i] != ' ') {
+        //                 strArr.splice(i, 0, "-\n")
+        //                 flag = !flag
+        //             }
+        //             else {
+        //                 strArr.splice(i, 0, "\n")
+        //                 flag = !flag
+        //             }
+        //             if (flag) j++
+        //         }
+        //     }
+        //     return strArr.join``
+        // };
+
+        // var input = "The quick brown fox jumped over the lazy developer.";
+        // console.log(wordWrap(input));
+
+        function maxSequence(arr) {
+            let max = 0
+            for (let i = 0; i < arr.length; i++) {
+                for (let sum = 0, j = i; j < arr.length; j++) {
+                    sum += arr[j]
+                    if (sum > max) max = sum
                 }
             }
-            return strArr.join``
-        };
+            return max
+        }
 
-        var input = "The quick brown fox jumped over the lazy developer.";
-        console.log(wordWrap(input));
+        console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
     </script>
 
     <body>
