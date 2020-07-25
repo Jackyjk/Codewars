@@ -1,0 +1,1 @@
+const solve = str => [/[A-Z]/, /[a-z]/, /\d/, /[\W]/].map(rgx => str.split(rgx).length - 1);
