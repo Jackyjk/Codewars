@@ -1,19 +1,20 @@
-// ????? 
+// ?????
 var SequenceSum = (function () {
     function SequenceSum () { }
-    var sum = 0
-    var str = ''
+
     SequenceSum.showSequence = function (count) {
+        let sum = 0
+        let str = ''
         for (let i = 0; i < count; i++) {
             str += `${i}+`
             sum += i
         }
         sum += count
+        if (count < 0) return `${count}<0`;
+        if (count == 0) return `${count}=0`;
         return `${str}${count} = ${sum}`
     };
-
     return SequenceSum;
-
 })();
 
 var SequenceSum = (function () {
@@ -34,3 +35,6 @@ var SequenceSum = (function () {
     return SequenceSum;
 })();
 console.log(SequenceSum.showSequence(6));
+console.log(SequenceSum.showSequence(21));
+console.log(SequenceSum.showSequence(-2));
+console.log(SequenceSum.showSequence(0));
