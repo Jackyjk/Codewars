@@ -1,0 +1,1 @@
+copyList = l => [...l];
