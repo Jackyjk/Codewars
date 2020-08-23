@@ -6,7 +6,6 @@ var lastDigit = function (str1, str2) {
 var lastDigit = function (str1, str2) {
 
     // if exponent is 0, return 1
-
     if (parseInt(str2) === 0) return 1;
 
     // otherwise...
@@ -22,18 +21,27 @@ var lastDigit = function (str1, str2) {
     // 9 rotates between 9, 1....
 
     // because we only need the final digit of str1 to determine the result, let's capture it
+    console.log(str1.slice(-1));
     var seed = parseInt(str1.slice(-1)) % 10;
     // at worst, the result of any ending digit rotates through four cases, we need two digits here becasue 111%4 === 11%4 != 1%4
+    console.log(str1.slice(-2));
     var exp = parseInt(str2.slice(-2)) % 4;
     if (exp === 0) exp = 4;  // if the exponent is a multiple of 4, we want to use '4', not '0' in our function.
 
-
     // so what we can do in shorthand is get the final digit of a number with an exponent of 1-4 and this is enough to predict any case.
-    //
 
     return Math.pow(seed, exp) % 10;
 }
 
-console.log(lastDigit("4", "1"));
-console.log(lastDigit("10", "10000000000"));
+// console.log(lastDigit("4", "1"));
+// console.log(lastDigit("10", "10000000000"));
 console.log(lastDigit("1606938044258990275541962092341162602522202993782792835301376", "2037035976334486086268445688409378161051468393665936250636140449354381299763336706183397376"));
+
+
+function test (a, b) {
+    let div = [1, 1, 4, 4, 2, 1, 1, 4, 4, 2];
+    let f = [[0], [1], [6, 2, 4, 8], [1, 3, 9, 7], [6, 4], [5], [6], [1, 7, 9, 3], [6, 8, 4, 2], [1, 9]];
+    return f[Number(a) % 10][Number(b) % div[Number(a) % 10]]
+}
+
+console.log(test("1606938044258990275541962092341162602522202993782792835301376", "2037035976334486086268445688409378161051468393665936250636140449354381299763336706183397376"));
