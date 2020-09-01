@@ -302,15 +302,33 @@
 
         // console.log(SequenceSum.showSequence(21));
 
-        function primeFactors(n) {
-            for (var s = "", d = 2; n > 1; d++) {
-                for (var k = 0; n % d == 0; k++, n /= d);
-                s += k ? (k == 1 ? `(${d})` : `(${d}**${k})`) : "";
+        // function primeFactors(n) {
+        //     for (var s = "", d = 2; n > 1; d++) {
+        //         for (var k = 0; n % d == 0; k++, n /= d);
+        //         s += k ? (k == 1 ? `(${d})` : `(${d}**${k})`) : "";
+        //     }
+        //     return s;
+        // }
+
+        // console.log(primeFactors(7775460)); //(2**2)(3**3)(5)(7)(11**2)(17)
+
+
+        function baseFinder(seq) {
+            //Good luck!
+            let num = 0
+            for (let i = 1; i < seq.length - 1; i++) {
+                if (Number(seq[i]) !== Number(seq[i - 1]) + 1) {
+                    num = Number(seq[i - 1]) + 1
+                    break
+                } else {
+                    num = Number(seq[seq.length - 1])
+                }
             }
-            return s;
+            return num
         }
 
-        console.log(primeFactors(7775460)); //(2**2)(3**3)(5)(7)(11**2)(17)
+
+        console.log(baseFinder(['1', '2', '3', '4', '5', '6', '10', '11', '12', '13']))
     </script>
 
     <body>
