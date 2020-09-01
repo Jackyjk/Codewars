@@ -313,22 +313,71 @@
         // console.log(primeFactors(7775460)); //(2**2)(3**3)(5)(7)(11**2)(17)
 
 
-        function baseFinder(seq) {
-            //Good luck!
-            let num = 0
-            for (let i = 1; i < seq.length - 1; i++) {
-                if (Number(seq[i]) !== Number(seq[i - 1]) + 1) {
-                    num = Number(seq[i - 1]) + 1
-                    break
-                } else {
-                    num = Number(seq[seq.length - 1])
+        // function baseFinder(seq) {
+        //     //Good luck!
+        //     let num = 0
+        //     for (let i = 1; i < seq.length - 1; i++) {
+        //         if (Number(seq[i]) !== Number(seq[i - 1]) + 1) {
+        //             num = Number(seq[i - 1]) + 1
+        //             break
+        //         } else {
+        //             num = Number(seq[seq.length - 1])
+        //         }
+        //     }
+        //     return num
+        // }
+
+
+        // console.log(baseFinder(['1', '2', '3', '4', '5', '6', '10', '11', '12', '13']))
+
+        // function findEvenIndex(arr) {
+        //     let left = 0;
+        //     let right = arr.reduce((s, n) => s + n, 0);
+        //     for (let i = 0; i < arr.length; i++) {
+        //         right -= arr[i];
+        //         if (left === right) return i;
+        //         left += arr[i];
+        //     }
+        //     return -1;
+        // }
+
+        // console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
+
+        function codewarResult(codewarrior, opponent) {
+            // 排序策略  以大打小 
+            let mineArr = codewarrior.slice().sort((a, b) => a - b);
+            let oppoArr = opponent.slice().sort((a, b) => a - b);
+
+            let victories = 0;
+            // i 对面最高的
+            for (let i = oppoArr.length - 1; i >= 0; i--) {
+                //j 我方最低的 
+                for (let j = 0; j < mineArr.length; j++) {
+                    if (mineArr[j] > oppoArr[i]) {
+                        victories++;
+                        // 去除数组中已经对战过的
+                        oppoArr.splice(i, 1);
+                        mineArr.splice(j, 1);
+                        break;
+                    }
                 }
             }
-            return num
+            // 失败次数
+            let defeats = oppoArr.length - victories;
+
+            for (let i = oppoArr.length - 1, j; i >= 0; i--) {
+                j = mineArr.indexOf(oppoArr[i]);
+                if (j !== -1) {
+                    defeats--;
+                    oppoArr.splice(i, 1);
+                    mineArr.splice(j, 1);
+                }
+            }
+
+            return victories > defeats ? "Victory" : victories < defeats ? "Defeat" : "Stalemate";
         }
 
-
-        console.log(baseFinder(['1', '2', '3', '4', '5', '6', '10', '11', '12', '13']))
+        console.log(codewarResult([2, 4, 3, 1], [4, 5, 1, 2]));
     </script>
 
     <body>
