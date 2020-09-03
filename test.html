@@ -379,24 +379,50 @@
 
         // console.log(codewarResult([2, 4, 3, 1], [4, 5, 1, 2]));
 
-        function reverse_and_combine_text(str) {
-            let newStr = str.split` `;
-            while (newStr.length !== 1) {
-                for (let i = 0; i < newStr.length; i++) {
-                    newStr[i] = newStr[i].split``.reverse().join``;
+        // function reverse_and_combine_text(str) {
+        //     let newStr = str.split` `;
+        //     while (newStr.length !== 1) {
+        //         for (let i = 0; i < newStr.length; i++) {
+        //             newStr[i] = newStr[i].split``.reverse().join``;
+        //         }
+        //         let newStr2 = [];
+        //         if (newStr.length % 2) newStr.push('');
+        //         for (let i = 0; i < newStr.length; i += 2) {
+        //             newStr2.push(newStr[i] + newStr[i + 1]);
+        //         }
+        //         newStr = newStr2;
+        //     }
+        //     return newStr[0];
+        // }
+
+        // console.log(reverse_and_combine_text("abc def ghi jkl"));
+        // console.log(reverse_and_combine_text("sdfsdf wee sdffg 342234 ftt"));
+
+        function sumOfDivided(list) {
+            if (list.length == 0) { return []; }
+            // 最大数字为基础  数组预长度
+            var m = Math.max.apply(null, list.map(Math.abs)),
+                list_of_primes = [],
+                marked = Array(m + 1); // 标记数组
+
+            for (var i = 2; i <= m; ++i) {
+
+                if (marked[i]) continue;
+
+                var sum = 0, isMul = false;
+                list.forEach(n => { if (n % i == 0) { sum += n; isMul = true; } });
+                if (isMul) list_of_primes.push([i, sum]);
+
+                
+                for (var j = 2 * i; j <= m; j += i) {
+                    marked[j] = true;
                 }
-                let newStr2 = [];
-                if (newStr.length % 2) newStr.push('');
-                for (let i = 0; i < newStr.length; i += 2) {
-                    newStr2.push(newStr[i] + newStr[i + 1]);
-                }
-                newStr = newStr2;
             }
-            return newStr[0];
+
+            return list_of_primes;
         }
 
-        console.log(reverse_and_combine_text("abc def ghi jkl"));
-        console.log(reverse_and_combine_text("sdfsdf wee sdffg 342234 ftt"));
+        console.log(sumOfDivided([12, 15]));
     </script>
 
     <body>
