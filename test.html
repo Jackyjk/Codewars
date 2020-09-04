@@ -398,31 +398,48 @@
         // console.log(reverse_and_combine_text("abc def ghi jkl"));
         // console.log(reverse_and_combine_text("sdfsdf wee sdffg 342234 ftt"));
 
-        function sumOfDivided(list) {
-            if (list.length == 0) { return []; }
-            // 最大数字为基础  数组预长度
-            var m = Math.max.apply(null, list.map(Math.abs)),
-                list_of_primes = [],
-                marked = Array(m + 1); // 标记数组
+        // function sumOfDivided(list) {
+        //     if (list.length == 0) { return []; }
+        //     // 最大数字为基础  数组预长度
+        //     var m = Math.max.apply(null, list.map(Math.abs)),
+        //         list_of_primes = [],
+        //         marked = Array(m + 1); // 标记数组
 
-            for (var i = 2; i <= m; ++i) {
+        //     for (var i = 2; i <= m; ++i) {
 
-                if (marked[i]) continue;
+        //         if (marked[i]) continue;
 
-                var sum = 0, isMul = false;
-                list.forEach(n => { if (n % i == 0) { sum += n; isMul = true; } });
-                if (isMul) list_of_primes.push([i, sum]);
+        //         var sum = 0, isMul = false;
+        //         list.forEach(n => { if (n % i == 0) { sum += n; isMul = true; } });
+        //         if (isMul) list_of_primes.push([i, sum]);
 
-                
-                for (var j = 2 * i; j <= m; j += i) {
-                    marked[j] = true;
+
+        //         for (var j = 2 * i; j <= m; j += i) {
+        //             marked[j] = true;
+        //         }
+        //     }
+
+        //     return list_of_primes;
+        // }
+
+        // console.log(sumOfDivided([12, 15]));
+
+        function solve(a) {
+            let minNum = 1, maxNum = 1;
+            for (let i = 0; i < a.length; i++) {
+                let arr = []
+                for (let j = 0; j < a[i].length; j++) {
+                    arr.push(a[i][j] * minNum),
+                        arr.push(a[i][j] * maxNum)
                 }
+                minNum = Math.min(...arr)
+                maxNum = Math.max(...arr)
             }
 
-            return list_of_primes;
+            return maxNum
         }
 
-        console.log(sumOfDivided([12, 15]));
+        console.log(solve([[1, 2], [3, 4]]));
     </script>
 
     <body>
