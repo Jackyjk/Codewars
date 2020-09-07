@@ -1,0 +1,1 @@
+const min = (a, b) => (isNaN(a) || isNaN(b)) ? NaN : ((a < b) ? +a : +b)
