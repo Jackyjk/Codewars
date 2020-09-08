@@ -1,4 +1,5 @@
 //  通过 50%
+//!  箭头函数中 没有 arguments 故出现错误
 numbers1 = () => !Array.from(arguments).map(a => (typeof a) == 'number').includes(false)
 
 // 通过100%
