@@ -1,0 +1,1 @@
+const generateMenu = arr => arr.reduce((c, v) => c += `<a href="${v.url}">${v.text}</a>`, '');
